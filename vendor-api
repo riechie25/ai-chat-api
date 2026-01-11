@@ -1,1 +1,11 @@
-1
+version: 1.2.8  # 或最新版本，检查文档
+endpoints:
+  custom:
+    - name: "我的中转服务"  # UI 显示名称
+      apiKey: "sk-WlaJwEesE6KvB3IQ7f503a59723b4bCaA18b93Da87D74413"  # 用环境变量引用 Key（安全）
+      baseURL: "https://api.shubiaobiao.cn/v1/chat/completions"  # 中转的 OpenAI 兼容基址
+      models:
+        fetch: true  # 推荐：自动从 /models 获取模型列表（包括 gpt-4o、claude-3、gemini 等）
+        # 如果自动失败，手动列出：default: ["gpt-4o", "claude-3-5-sonnet-20240620", "gemini-1.5-pro"]
+      titleModel: "gpt-4o"  # 可选：用于生成对话标题的模型
+      modelDisplayLabel: "中转"
